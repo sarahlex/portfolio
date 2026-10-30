@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarah Alex – CSE (Data Science) Student</title>
+<meta name="description" content="Portfolio of Sarah Alex, a Computer Science and Engineering (Data Science) student building machine learning systems and leading tech communities.">
+<meta name="theme-color" content="#16060d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#16060d; --panel:#25101a; --panel2:#301422; --text:#fbeef2; --muted:#c9acb7;
+  --pink:#ff5fa8; --lilac:#b8a4ff; --ice:#bfeaff; --butter:#ffe97a; --ink:#2a0614;
+  --display:"Unbounded","Arial Rounded MT Bold",system-ui,sans-serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --chrome:linear-gradient(180deg,#fff 0%,#dcdfee 42%,#8f93ab 52%,#eef0fa 72%,#fff 100%);
+  --holo:linear-gradient(115deg,#ff9ccb,#ffe97a 25%,#bfeaff 50%,#b8a4ff 75%,#ff9ccb);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--text);font:400 1rem/1.7 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background-image:radial-gradient(60rem 40rem at 85% -5%,rgba(255,95,168,.22),transparent 60%),radial-gradient(50rem 40rem at -10% 35%,rgba(184,164,255,.16),transparent 60%),radial-gradient(50rem 40rem at 100% 80%,rgba(255,233,122,.08),transparent 60%);
+  background-attachment:fixed}
+a{color:inherit}
+ul{list-style:none}
+:focus-visible{outline:3px solid var(--butter);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(1.7rem,4vw,2.6rem);margin-bottom:12px}
+h2 span{background:var(--chrome);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.lede{color:var(--muted);max-width:56ch;margin-bottom:40px}
+section{padding:84px 0}
+p{max-width:64ch}
+
+/* Floating nav */
+header{position:sticky;top:12px;z-index:30;padding:0 16px}
+.bar{max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:58px;padding:0 10px 0 22px;border-radius:999px;background:rgba(37,16,26,.82);backdrop-filter:blur(12px);border:2px solid rgba(255,255,255,.18);box-shadow:0 10px 30px -12px rgba(255,95,168,.5)}
+.brand{font:700 1rem var(--display);text-decoration:none;display:flex;align-items:center;gap:8px}
+.brand b{color:var(--pink)}
+nav{display:flex;align-items:center;gap:22px}
+nav a{font-size:.9rem;font-weight:500;text-decoration:none;color:var(--muted);transition:color .2s}
+nav a:hover{color:var(--butter)}
+.gloss{display:inline-block;padding:12px 26px;border-radius:999px;font-weight:700;font-size:.95rem;text-decoration:none;color:var(--ink)!important;border:2px solid rgba(255,255,255,.55);
+  background:linear-gradient(180deg,#ffb4d6 0%,#ff5fa8 48%,#e2307f 52%,#ff5fa8 100%);box-shadow:inset 0 2px 0 rgba(255,255,255,.7),0 8px 22px -8px rgba(255,95,168,.8);transition:transform .2s,filter .2s}
+.gloss:hover{transform:translateY(-3px) scale(1.03);filter:brightness(1.08)}
+.gloss.ice{background:linear-gradient(180deg,#eefaff 0%,#bfeaff 48%,#84cdf0 52%,#bfeaff 100%);box-shadow:inset 0 2px 0 #fff,0 8px 22px -8px rgba(191,234,255,.7)}
+.gloss.sm{padding:9px 20px;font-size:.88rem}
+.menu{display:none;border:2px solid rgba(255,255,255,.3);background:var(--panel2);color:var(--text);border-radius:999px;padding:8px 18px;font:500 .88rem var(--sans);cursor:pointer}
+
+/* Windows */
+.win{border:2px solid var(--c);border-radius:20px;background:var(--panel);box-shadow:7px 7px 0 var(--c);overflow:hidden;transition:transform .25s,box-shadow .25s}
+.win:hover{transform:translate(-3px,-3px);box-shadow:10px 10px 0 var(--c)}
+.win>.tb{display:flex;align-items:center;gap:10px;padding:9px 16px;background:linear-gradient(180deg,rgba(255,255,255,.55),transparent 55%),var(--c);color:var(--ink);font:700 .74rem var(--display)}
+.win>.tb i{margin-left:auto;margin-right:36px;width:11px;height:11px;border-radius:50%;background:var(--ink);box-shadow:-17px 0 rgba(42,6,20,.55),-34px 0 rgba(42,6,20,.3)}
+.win>.body{padding:28px}
+.c-pink{--c:var(--pink)}.c-lilac{--c:var(--lilac)}.c-ice{--c:var(--ice)}.c-butter{--c:var(--butter)}
+
+/* Hero */
+.hero{padding:70px 0 90px;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center}
+.sp{position:absolute;color:var(--butter);pointer-events:none;line-height:1}
+.sp.s1{left:3%;top:16%;font-size:1.8rem}.sp.s2{left:46%;top:8%;font-size:1.1rem;color:var(--ice)}.sp.s3{right:4%;bottom:10%;font-size:2.2rem;color:var(--pink)}.sp.s4{left:40%;bottom:8%;font-size:1.3rem;color:var(--lilac)}
+.hi{display:inline-block;background:var(--panel2);border:2px solid var(--lilac);color:var(--lilac);font-weight:700;font-size:.88rem;padding:6px 16px;border-radius:999px;margin-bottom:22px;transform:rotate(-2deg)}
+.hero h1{font-size:clamp(3rem,9vw,6.4rem);line-height:.98;margin-bottom:22px;background:var(--chrome);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(3px 4px 0 rgba(255,95,168,.8))}
+.tag{font-size:1.15rem;color:var(--text);margin-bottom:12px;font-weight:500;max-width:34ch}
+.sub{color:var(--muted);margin-bottom:32px;max-width:46ch}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+.pic{position:relative;justify-self:center;width:min(100%,380px);transform:rotate(2.5deg)}
+.pic .ph{position:relative;aspect-ratio:4/5;background:linear-gradient(160deg,var(--panel2),#5a1530);display:grid;place-items:center}
+.pic .ph span{font:700 5rem var(--display);background:var(--chrome);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.pic .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sticker{position:absolute;z-index:2;border:2px solid #fff;border-radius:999px;padding:6px 16px;font:700 .8rem var(--display);color:var(--ink);box-shadow:3px 3px 0 var(--ink)}
+.sticker.a{background:var(--butter);left:-26px;top:18%;transform:rotate(-8deg)}
+.sticker.b{background:var(--ice);right:-20px;bottom:14%;transform:rotate(6deg)}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:stretch}
+.about-grid p{font-size:1.05rem}
+.about-grid p+p{margin-top:16px}
+.bubbles{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-content:center}
+.bub{aspect-ratio:1;border-radius:50%;display:grid;place-content:center;text-align:center;padding:10px;color:var(--ink);border:2px solid rgba(255,255,255,.7);box-shadow:inset 0 8px 14px rgba(255,255,255,.55),inset 0 -8px 14px rgba(0,0,0,.14),0 10px 24px -10px rgba(0,0,0,.6)}
+.bub b{font:700 1.7rem/1 var(--display)}
+.bub span{font-size:.74rem;line-height:1.25;margin-top:5px;font-weight:500}
+.bub:nth-child(1){background:radial-gradient(circle at 30% 25%,#ffd1e6,var(--pink))}
+.bub:nth-child(2){background:radial-gradient(circle at 30% 25%,#fff7c4,var(--butter))}
+.bub:nth-child(3){background:radial-gradient(circle at 30% 25%,#e8e0ff,var(--lilac))}
+.bub:nth-child(4){background:radial-gradient(circle at 30% 25%,#f4fcff,var(--ice))}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.skills .body{padding:22px 24px 26px}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chips li{font-size:.86rem;font-weight:700;padding:6px 15px;border-radius:999px;color:var(--ink);background:linear-gradient(180deg,#fff 0%,var(--c) 85%);border:1.5px solid rgba(255,255,255,.7);box-shadow:inset 0 1px 0 #fff}
+
+/* Experience */
+.jobs{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.job h3{font-size:1.3rem;margin-bottom:4px}
+.job .org{color:var(--c);font-weight:700;margin-bottom:6px}
+.job .when{display:inline-block;font-size:.8rem;font-weight:700;background:var(--panel2);border-radius:999px;padding:3px 14px;margin-bottom:14px;color:var(--muted)}
+.job p{color:#ecd8df}
+
+/* Projects */
+.projects{display:grid;gap:30px}
+.project .body{display:grid;grid-template-columns:1fr 1.5fr;gap:36px}
+.project h3{font-size:clamp(1.3rem,2.6vw,1.8rem);margin-bottom:16px}
+.project p{color:#ecd8df}
+.project p+p{margin-top:12px}
+.project .chips{margin-top:6px}
+.plink{margin-top:18px}
+.plink[hidden]{display:none}
+
+/* Leadership: holographic ID badges */
+.ids{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:start;padding-top:22px}
+.id{position:relative;border-radius:26px;padding:3px;background:var(--holo);background-size:220% 220%;box-shadow:0 24px 46px -24px rgba(255,95,168,.7);transition:transform .35s,background-position .8s}
+.id:nth-child(1){transform:rotate(-1.6deg)}
+.id:nth-child(2){transform:rotate(1.6deg);margin-top:34px}
+.id:hover{transform:rotate(0) translateY(-6px);background-position:100% 100%}
+.id::before{content:"";position:absolute;left:50%;top:-18px;width:74px;height:22px;margin-left:-37px;border-radius:12px 12px 4px 4px;background:var(--chrome);border:2px solid #8f93ab;z-index:2}
+.id::after{content:"";position:absolute;left:50%;top:-8px;width:34px;height:8px;margin-left:-17px;border-radius:6px;background:var(--bg);z-index:3}
+.id-in{background:var(--panel);border-radius:23px;overflow:hidden;position:relative}
+.id-top{background:var(--holo);background-size:220% 220%;color:var(--ink);padding:26px 26px 12px;font:700 .9rem var(--display)}
+.id-top small{display:block;font:500 .8rem var(--sans);margin-top:3px}
+.id-body{padding:24px 26px 28px}
+.role{font:700 clamp(1.6rem,3.4vw,2.2rem)/1.05 var(--display);background:var(--chrome);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;margin-bottom:6px}
+.dates{color:var(--pink);font-weight:700;margin-bottom:18px}
+.counts{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+.count{background:var(--panel2);border:2px dashed var(--lilac);border-radius:18px;padding:10px 18px;min-width:120px}
+.count b{display:block;font:700 1.8rem/1 var(--display);color:var(--butter)}
+.count span{font-size:.8rem;color:var(--muted)}
+.id li{position:relative;padding-left:26px;margin-bottom:12px;color:#ecd8df}
+.id li::before{content:"✦";position:absolute;left:0;top:0;color:var(--butter)}
+.tape{display:inline-block;background:var(--butter);color:var(--ink);font:700 .8rem var(--display);padding:8px 18px;border-radius:8px;transform:rotate(-2deg);margin-top:6px;box-shadow:3px 3px 0 var(--pink)}
+.rolebox{background:var(--panel2);border-radius:18px;padding:18px 20px;margin-bottom:14px;border-left:6px solid var(--c)}
+.rolebox h4{font:700 1rem var(--display);margin-bottom:6px;color:var(--c)}
+.rolebox p{color:#ecd8df;font-size:.96rem}
+
+/* Contact */
+.contact{text-align:center}
+.contact .win{max-width:820px;margin:0 auto}
+.contact .body{padding:56px 28px}
+.contact h2{font-size:clamp(2rem,6vw,3.6rem)}
+.contact p{margin:0 auto 26px;color:var(--muted)}
+.mail{display:inline-block;font:700 clamp(1.05rem,3.6vw,2rem) var(--display);color:var(--butter);word-break:break-all;text-decoration-thickness:3px;text-underline-offset:8px}
+.mail:hover{color:var(--pink)}
+.social{display:flex;gap:14px;justify-content:center;margin-top:32px;flex-wrap:wrap}
+footer{padding:26px 0 40px;text-align:center;color:var(--muted);font-size:.86rem}
+
+/* Motion */
+@media (prefers-reduced-motion:no-preference){
+  .hero .wrap>*{animation:pop .9s cubic-bezier(.2,.8,.2,1) both}
+  .hero .wrap>.pic{animation-delay:.15s}
+  @keyframes pop{from{opacity:0;transform:translateY(26px) scale(.97)}}
+  .sp{animation:tw 3.2s ease-in-out infinite}.sp.s2{animation-delay:.8s}.sp.s3{animation-delay:1.4s}.sp.s4{animation-delay:2s}
+  @keyframes tw{50%{transform:scale(1.5) rotate(25deg);opacity:.5}}
+  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+  .js .reveal.in{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Responsive */
+@media (max-width:860px){
+  section{padding:60px 0}
+  .hero .wrap,.about-grid,.skills,.jobs,.project .body,.ids{grid-template-columns:1fr}
+  .hero{padding:40px 0 60px}
+  .pic{width:min(80%,320px);order:-1}
+  .bubbles{max-width:340px}
+  .id:nth-child(2){margin-top:20px}
+  .project .body{gap:16px}
+  .menu{display:block}
+  nav{display:none;position:absolute;top:66px;left:16px;right:16px;background:var(--panel);border:2px solid rgba(255,255,255,.18);border-radius:22px;flex-direction:column;align-items:flex-start;padding:18px 22px 22px;gap:14px}
+  nav.open{display:flex}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="brand" href="#top"><b>✦</b>Sarah Alex</a>
+    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#leadership">Leadership</a>
+      <a class="gloss sm" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <span class="sp s1" aria-hidden="true">✦</span><span class="sp s2" aria-hidden="true">✦</span><span class="sp s3" aria-hidden="true">✦</span><span class="sp s4" aria-hidden="true">✦</span>
+    <div class="wrap">
+      <div>
+        <span class="hi">CSE (Data Science) Student</span>
+        <h1>Sarah Alex</h1>
+        <p class="tag">Building ML systems and leading tech communities.</p>
+        <p class="sub">I work in Python and data, from graph neural networks to EEG analysis, and I’ve led a student chapter of 500+ members.</p>
+        <div class="btns">
+          <a class="gloss" href="#projects">View projects</a>
+          <a class="gloss ice" href="resume.pdf" download>Download resume</a>
+        </div>
+      </div>
+      <!-- Add your photo as photo.jpg next to this file. Until then, initials show. -->
+      <div class="pic win c-lilac">
+        <span class="sticker a">CGPA 9.41</span>
+        <span class="sticker b">500+ members led</span>
+        <div class="tb">hello<i></i></div>
+        <div class="ph">
+          <span aria-hidden="true">SA</span>
+          <img src="photo.jpg" alt="Portrait of Sarah Alex" onerror="this.remove()">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="reveal about-grid">
+        <div class="win c-pink">
+          <div class="tb">about me<i></i></div>
+          <div class="body">
+            <h2><span>A little about me</span></h2>
+            <p>I’m a B.Tech student in Computer Science and Engineering (Data Science) at Mar Athanasius College of Engineering, Kothamangalam, graduating in 2027. I work mostly in Python, and I like projects that carry a problem from raw data all the way to something a person can use: a database, a model, a dashboard.</p>
+            <p>Recently I’ve been detecting illicit Bitcoin wallets with graph neural networks at IIIT Kottayam and screening EEG recordings for Alzheimer’s disease and depression. Alongside that, I served as Chairperson of the ISTE MACE student chapter and led a technical flagship event for 300+ participants.</p>
+          </div>
+        </div>
+        <div class="bubbles">
+          <div class="bub"><b>9.41</b><span>CGPA in B.Tech</span></div>
+          <div class="bub"><b>3</b><span>ML and data projects</span></div>
+          <div class="bub"><b>500+</b><span>members in my chapter</span></div>
+          <div class="bub"><b>300+</b><span>flagship event participants</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="reveal">
+        <h2><span>What I work with</span></h2>
+        <p class="lede">The languages, libraries and tools I use day to day.</p>
+      </div>
+      <div class="skills reveal">
+        <div class="win c-pink"><div class="tb">languages<i></i></div><div class="body"><ul class="chips"><li>Python</li><li>C</li><li>R</li><li>Java</li><li>SQL</li></ul></div></div>
+        <div class="win c-lilac"><div class="tb">machine learning and data<i></i></div><div class="body"><ul class="chips"><li>NumPy</li><li>Pandas</li><li>Scikit-learn</li><li>PyTorch Geometric</li><li>Matplotlib</li></ul></div></div>
+        <div class="win c-ice"><div class="tb">web<i></i></div><div class="body"><ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Flask</li></ul></div></div>
+        <div class="win c-butter"><div class="tb">tools and concepts<i></i></div><div class="body"><ul class="chips"><li>Git</li><li>VS Code</li><li>Data Structures and Algorithms</li><li>Object-Oriented Programming</li><li>DBMS</li></ul></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="reveal">
+        <h2><span>Experience</span></h2>
+        <p class="lede">Where I’ve applied what I’ve learned.</p>
+      </div>
+      <div class="jobs reveal">
+        <article class="win job c-ice">
+          <div class="tb">iiit kottayam<i></i></div>
+          <div class="body">
+            <span class="when">June – July 2026</span>
+            <h3>Project Intern</h3>
+            <p class="org">IIIT Kottayam</p>
+            <p>Built a community-aware GraphSAGE framework for illicit Bitcoin wallet detection on the Elliptic++ dataset using PyTorch Geometric. It integrates Leiden community detection, centrality-based Hub Risk profiling, and a zero-leakage pipeline.</p>
+          </div>
+        </article>
+        <article class="win job c-butter">
+          <div class="tb">keltron<i></i></div>
+          <div class="body">
+            <span class="when">June 2025</span>
+            <h3>Data Science Trainee</h3>
+            <p class="org">Keltron, Ernakulam</p>
+            <p>Cleaned and explored real-world datasets in Python, then built and evaluated analytical models and visualised the results.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="reveal">
+        <h2><span>Projects</span></h2>
+        <p class="lede">Three projects, each taken from data to something usable.</p>
+      </div>
+      <div class="projects">
+        <article class="win project c-lilac reveal">
+          <div class="tb">eeg classification<i></i></div>
+          <div class="body">
+            <div>
+              <h3>Explainable EEG Classification</h3>
+              <ul class="chips"><li>Python</li><li>scikit-learn</li><li>MNE</li><li>Streamlit</li></ul>
+            </div>
+            <div>
+              <p>A machine-learning pipeline that reads raw brain-wave (EEG) recordings and extracts clinically meaningful signal features. A dual stacking-ensemble classifier then triages patients toward Alzheimer’s disease or Major Depressive Disorder.</p>
+              <p>Results are served through a Streamlit clinical dashboard.</p>
+              <!-- Add your repo link, then delete the word hidden -->
+              <a class="gloss sm plink" href="#" target="_blank" rel="noopener" hidden>View on GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="win project c-pink reveal">
+          <div class="tb">fraud detection<i></i></div>
+          <div class="body">
+            <div>
+              <h3>Credit Card Fraud Detection</h3>
+              <ul class="chips"><li>Python</li><li>Flask</li><li>Scikit-learn</li><li>Apriori</li><li>Pandas</li></ul>
+            </div>
+            <div>
+              <p>A web application that flags risky transactions. A Decision Tree scores each one and buckets it into high, medium, or low risk. The Apriori algorithm then mines frequent patterns, such as a high amount combined with an international, night-time purchase, to explain why transactions look suspicious.</p>
+              <p>Users upload a CSV, and the Flask backend returns per-transaction risk scores, an overall assessment, a doughnut chart, and recommendations. It was trained on a synthetic dataset of 500 transactions, about 4% of them fraud.</p>
+              <a class="gloss sm plink" href="#" target="_blank" rel="noopener" hidden>View on GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="win project c-butter reveal">
+          <div class="tb">eventify<i></i></div>
+          <div class="body">
+            <div>
+              <h3>Eventify</h3>
+              <ul class="chips"><li>Python</li><li>Flask</li><li>MySQL</li><li>SQL</li></ul>
+            </div>
+            <div>
+              <p>A database-driven event management platform that connects event organizers with service providers. It rests on a normalized relational database with referential integrity, cascading updates, and constraints that block deletions while active bookings exist.</p>
+              <p>Organizers and providers get separate dashboards, secured with password hashing and session management. The platform covers event creation, categorized service discovery, booking, and sponsorship matching.</p>
+              <a class="gloss sm plink" href="#" target="_blank" rel="noopener" hidden>View on GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="leadership">
+    <div class="wrap">
+      <div class="reveal">
+        <h2><span>Leadership</span></h2>
+        <p class="lede">Two student bodies, two badges. Running them taught me as much as the code did.</p>
+      </div>
+      <div class="ids reveal">
+        <article class="id">
+          <div class="id-in">
+            <div class="id-top">ISTE MACE Student Chapter<small>2024 – 2026</small></div>
+            <div class="id-body">
+              <h3 class="role">Chairperson</h3>
+              <p class="dates">July 2025 – Sep 2026</p>
+              <div class="counts">
+                <div class="count"><b>500+</b><span>chapter members</span></div>
+                <div class="count"><b>300+</b><span>flagship participants</span></div>
+              </div>
+              <ul>
+                <li>Led the chapter, coordinated technical events, and managed the executive committee.</li>
+                <li>Led the Technical Flagship Event, managing the budget, improving hospitality operations, and securing sponsorships to close funding gaps.</li>
+              </ul>
+              <span class="tape">Creative Team Lead · 2024 – 2025</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="id">
+          <div class="id-in">
+            <div class="id-top">IEEE MACE Student Branch<small>2024 – 2025</small></div>
+            <div class="id-body">
+              <div class="rolebox c-pink">
+                <h4>IEEE IES Ambassador 2025</h4>
+                <p>Represented the Kerala Section and promoted IES initiatives among students.</p>
+              </div>
+              <div class="rolebox c-ice">
+                <h4>Joint Secretary</h4>
+                <p>IES/PELS Joint Chapter. Managed chapter operations and organised technical sessions, workshops, and competitions.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap reveal">
+      <div class="win c-pink">
+        <div class="tb">say hi<i></i></div>
+        <div class="body">
+          <h2><span>Let’s talk</span></h2>
+          <p>I’m happy to hear about opportunities, collaborations, or questions about my work. Email is the quickest way to reach me.</p>
+          <a class="mail" href="mailto:saarahlex@gmail.com">saarahlex@gmail.com</a>
+          <div class="social">
+            <a class="gloss" href="https://linkedin.com/in/sarah-alex-2k5" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="gloss ice" href="https://github.com/sarahlex" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="yr">2026</span> Sarah Alex</footer>
+
+<script>
+(function(){
+  var menu=document.getElementById('menu'), nav=document.getElementById('nav');
+  menu.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    menu.setAttribute('aria-expanded',open);
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  var items=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.documentElement.classList.add('js');
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.1});
+    items.forEach(function(el){io.observe(el);});
+  }
+})();
+</script>
+</body>
+</html>
